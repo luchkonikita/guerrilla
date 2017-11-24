@@ -1,0 +1,17 @@
+$font-sizes: 10 12 14 16 18 20 24 28 32 36 40
+$line-heights: 10 12 14 16 18 20 24 28 32 36 40
+$text-alignments: left center right
+
+.text
+  +responsive
+    @each $size in $font-sizes
+      &-fs-#{$size}
+        font-size: #{$size}px
+
+  @each $name, $value in $colors
+    &.c-#{$name}
+      color: #{$value}
+
+  @each $alignment in $text-alignments
+    &.ta-#{$alignment}
+      text-align: #{$alignment}

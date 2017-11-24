@@ -1,0 +1,17 @@
+.box
+  +responsive
+    @each $size in $box-paddings
+      &-p-#{$size}
+        padding: #{$size}px
+
+      &-pv-#{$size}
+        padding-top: #{$size}px
+        padding-bottom: #{$size}px
+
+      &-ph-#{$size}
+        padding-left: #{$size}px
+        padding-right: #{$size}px
+
+  @each $name, $value in $colors
+    &.bc-#{$name}
+      border: 1px solid #{$value}

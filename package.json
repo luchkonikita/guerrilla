@@ -1,0 +1,22 @@
+{
+  "name": "guerrilla.css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp webserver",
+    "deploy": "gulp pug && gulp sass && surge --project=\"./dist\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-webserver": "^0.9.1",
+    "merge-stream": "^1.0.1",
+    "pug": "^2.0.0-rc.4",
+    "surge": "^0.19.0"
+  }
+}

@@ -1,0 +1,28 @@
+section.section#box(data-page)
+  h2.section-title Box
+
+  section.group
+    p Box is a base building block for your layout. It has settings for padding, border and background color.
+
+
+  h3 Paddings
+
+  p
+    | You need to specify <em>$box-paddings</em> to list all desired values for padding rules.
+    | Example: <em>$box-paddings: 4 8 10 12 16 18 20 24 28 30</em>.
+    | This will give you several sets of classes, like:
+
+  ul
+    li <em>.desktop-p-10</em> to set 10px padding on desktops
+    li <em>.desktop-pv-10</em> to set 10px vertical padding on desktops
+    li <em>.desktop-ph-10</em> to set 10px horizontal padding on desktops
+
+  section.group
+    section.example
+      each size in [4, 8, 10, 12, 16, 18, 20, 24, 28, 30]
+        section.example-item
+          .box.bc-black.mobile-p-4(class="desktop-p-" + size)
+            | Grumpy Wizards Make Toxic Brew For the Evil Queen & Jack
+
+    pre.example-code
+      = '<div class="box.desktop-p-10.mobile-p-4">Grumpy Wizards Make Toxic Brew For the Evil Queen & Jack</div>'

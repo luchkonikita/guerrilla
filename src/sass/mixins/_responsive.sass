@@ -1,0 +1,17 @@
+// There is no "screen-mobile", because it is the default screen
+// Keep in sync with ResponsiveWrapper
+$breakpoints: ('desktop': 2560, 'desktop_m': 1360px, 'desktop_s': 1142px, 'tablet_l': 896px, 'tablet': 668px, 'mobile': 524px)
+
+=screen($media)
+  @if $media == 'desktop'
+    @content
+  @else
+    $value: map-get($breakpoints, $media)
+    @media (max-width: #{$value})
+      @content
+
+=responsive
+  @each $media, $value in $breakpoints
+    +screen($media)
+      &.#{$media}
+        @content

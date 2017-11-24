@@ -1,0 +1,55 @@
+section.section#text(data-page)
+  h2.section-title Text
+
+  section.group
+    p
+      | The generic representation for the text. Includes some responsive styles.
+      | The base class is <em>text</em> and it allows you to use a set of modifiers to style different properties.
+
+  h3 Sizes and line-heights
+
+  p
+    | You need to set two variables to list all desired values for <em>font-size</em> and <em>line-height</em> rules.
+    | Example: <em>$font-sizes: 10 12 14 16 18 20 24 28 32 36 40</em>, <em>$font-sizes: 10 12 14 16 18 20 24 28 32 36 40</em>.
+
+  p
+    | Import <em>primitives</em> folder after these variables and you'll have classes generated for the values you set.
+    | Please note that these classes have responsive prefixes.
+
+  section.group
+    section.example
+      each size in [10, 12, 14, 16, 18, 20, 24, 28]
+        section.example-item
+          .text.c-black(class="desktop-fs-" + size)
+            | Grumpy Wizards Make Toxic Brew For the Evil Queen & Jack
+
+    pre.example-code
+      = '<p class="text.desktop-fs-16.mobile-fs-12">Grumpy Wizards Make Toxic Brew For the Evil Queen & Jack</p>'
+
+  h3 Colors
+
+  section.group
+    p
+      | Set values map like <em>$colors: ('black': '#414141','green': '#00cc83')</em> and you will have classes for text elements with all these colors included.
+
+  section.group
+    section.example
+      each color in ["black", "green", "blue", "lblue", "purple", "yellow", "red"]
+        section.example-item
+          .text.desktop-fs-16.mobile-fs-12(class="c-" + color)
+            | Grumpy Wizards Make Toxic Brew For the Evil Queen & Jack
+
+    pre.example-code
+      = '<p class="text.c-green">Grumpy Wizards Make Toxic Brew For the Evil Queen & Jack</p>'
+
+  h3 Alignment
+
+  section.group
+    section.example
+      each alignment in ["left", "center", "right"]
+        section.example-item
+          .text.desktop-fs-16.mobile-fs-12.c-black(class="ta-" + alignment)
+            | Grumpy Wizards Make Toxic Brew For the Evil Queen & Jack
+
+    pre.example-code
+      = '<p class="text.fa-left">Grumpy Wizards Make Toxic Brew For the Evil Queen & Jack</p>'

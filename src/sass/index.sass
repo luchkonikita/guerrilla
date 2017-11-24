@@ -1,0 +1,170 @@
+@import 'bundles/first_page/index'
+@import 'bundles/second_page/index'
+
+// Reset
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section
+  display: block
+
+body
+  line-height: 1
+
+ol, ul
+  list-style: none
+
+blockquote, q
+  quotes: none
+
+blockquote:before, blockquote:after,
+q:before, q:after
+  content: ''
+  content: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+// Some styles
+
+body
+  background-color: white
+  color: #414141
+  font-family: 'Merriweather', serif
+  padding: 70px 100px 70px 300px
+  line-height: 20px
+
+  @media(max-width: 600px)
+    padding: 30px
+
+    .sidebar
+      display: none
+
+h2
+  font-size: 30px
+
+h3
+  font-size: 22px
+
+h3, p, ul
+  margin-bottom: 10px
+
+p, ul, li
+  line-height: 26px
+  color: #737373
+
+p
+  line-height: 2em
+  margin-bottom: 1em
+
+li:before
+  content: '-'
+  margin-right: 10px
+
+strong
+  color: #414141
+  font-weight: 700
+
+em
+  background-color: #fff8d1
+  border-radius: 4px
+  border: 1px solid #eee4a9
+  font-family: monospace
+  display: inline-block
+  padding: 0 3px
+  line-height: 16px
+
+.sidebar
+  border-right: 1px solid #dfe3e9
+  background-color: #f9fafb
+  bottom: 0
+  left: 0
+  position: fixed
+  top: 0
+  width: 200px
+  z-index: 1
+
+.sidebar-item
+  color: #414141
+  cursor: pointer
+  display: block
+  font-family: 'Nunito', serif
+  font-size: 18px
+  padding: 20px 0
+  margin: 0 20px
+  text-decoration: none
+  transition: color 200ms
+
+  &:hover
+    color: #6d55c0
+
+.sidebar-item + .sidebar-item
+  border-top: 1px solid #dfe3e9
+
+.logo
+  font-family: 'Sofia'
+  font-size: 30px
+  padding: 40px 0
+
+.section
+  display: none
+  margin: 2em 0
+
+  &.is-active
+    display: block
+
+.section-title
+  font-weight: 700
+  letter-spacing: 2px
+  margin-bottom: 40px
+  text-transform: uppercase
+
+.group
+  margin: 40px 0
+
+.example
+  border-radius: 4px
+  border: 1px solid #dfe3e9
+  padding: 20px
+
+  .group &
+    border-radius: 4px 4px 0 0
+
+.example-item + .example-item
+  margin-top: 20px
+
+.example-code
+  background-color: #fff8d1
+  border-radius: 4px
+  border: 1px solid #eee4a9
+  font-family: monospace
+  line-height: 20px
+  margin-bottom: 30px
+  padding: 20px
+  overflow-x: scroll
+
+  .group &
+    border-radius: 0 0 4px 4px
+    position: relative
+    top: -1px

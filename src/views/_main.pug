@@ -1,0 +1,82 @@
+section.section#main.is-active(data-page)
+  h2.section-title Introduction
+
+  section.group
+    h3 Prerequisites
+
+    p
+      | The main goal of this project is to introduce a scalable approach to CSS. There are certain cases when approaches like BEM do not work or just do not bring enough satisfaction.
+
+    p
+      | Imagine a case when your project has a big number of pages which are different enough and which don't follow the same design guide. You will certainly attempt to share some common blocks between these pages. <strong>There might be a chance that these blocks are almost the same but they have differences on different pages.</strong> This situation might be easily met when you are adding new pages to a website which already has some legacy stuff. The designer might want to extend old styles on new pages, this happens. As a good developer, you want to make all the pages use same blocks, but this does not happen that quick and that easy, life is tough.
+
+    p
+      | Your website might be using 2-3-4 different UI themes at one time if there is a lot of pages and all they are implemented at different points in time. This hurts code reusability if you have to maintain 2-3-4 sets of UI components separately.
+
+  section.group
+    h3 Goals
+
+    p
+      | The main idea of the proposed approach is to fix all the previously mentioned problems, in an elegant way, sure! So main benefits are going to be:
+
+    ul
+      li Highest possible CSS reusability, even across multiple designs.
+      li Easy refactoring. You should not be afraid of breaking something by accident.
+      li High developer productivity. When implementing a new page you should write as less new CSS as possible, ideally only use existing components.
+      li Built-in support for responsive design. An easy way to style components differently based on a viewport size (declarative way of doing this).
+
+  section.group
+    h3 Goals
+    p
+      | As mentioned before, one of the main features of this approach is an ability to maintain different themes simultaneously. For doing this, the project expects you to define a set of variables and later it will generate all the necessary CSS classes based on them.
+
+    p
+      | Another important thing you are supposed to do - is using primitive components to create your pages. Basically, it follows old good "prefer composition over inheritance" approach. The project defines a set of primitives for everyday needs, like <em>text</em>, <em>box</em>, <em>spacing</em>, <em>button</em>, and so on... You can add a big number of such components to serve your needs. As an outcome, you should be able to create almost any layout by using just them. In rare cases, you'll have to write some higher-level components for some specific purposes, for example, some animated things or elements with a precise absolute positioning.
+
+    p
+      | There is one hidden benefit with this approach. If you have also an entirely different parts of your website, like an admin panel - you can still use your components, just need to supply a theme accordingly.
+
+  section.group
+    h3 Folders
+
+    p
+      | The following structure should give you a good staring point:
+
+    section.group
+      pre.example-code
+        | styles/
+        |   ├── bundles/
+        |   │   ├── first_page
+        |   │   │   ├── components
+        |   │   │   │   └── _hero.sass
+        |   │   │   └── _index.sass
+        |   │   ├── second_page
+        |   │   └── shared
+        |   │       └── components
+        |   ├── mixins/
+        |   │   ├── _some_mixin.sass
+        |   │   └── ...
+        |   ├── primitives/
+        |   │   ├── _box.sass
+        |   │   ├── _text.sass
+        |   │   ├── _spacing.sass
+        |   │   └── ...
+        |   ├── themes/
+        |   │   ├── _first.sass
+        |   │   ├── _second.sass
+        |   │   └── ...
+        |   ├── first_page_index_file.sass    // the file bundles styles for the page
+        |   ├── second_page_index_file.sass   // the file bundles styles for the page
+        |   └── ...
+
+    p
+      | When you work on a new page you can create a new bundle, pick the theme and you'll be good to go and write your HTML.
+
+  section.group
+    h3 Selectors
+
+    p
+      | There are CSS classes for different primitive components like <em>text</em>. Every such component has a wide set of modifiers to apply the desired styling. Modifiers come in two sorts: simple and responsive. Responsive ones have a prefix marking on which screen size mentioned modifier has to be applied. <em>.text.desktop-fs-20.mobile-fs-14</em> are responsive modifiers meaning that this block of text will have a <em>font-size</em> 20 on desktops and 10 on mobiles. Simple modifier looks like <em>.text.c-red</em> and means that the text should be red.
+
+    p
+      | Please note that classes are automatically generated based on variables you set in your theme.

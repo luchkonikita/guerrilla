@@ -1,0 +1,19 @@
+$margins: 4 8 10 12 16 18 20 24 28 30;
+
+.spacing.is-horizontal
+  +responsive
+    @each $size in $margins
+      &-size-#{$size} > *
+        margin-right: #{$size}px
+
+.spacing.is-horizontal > *:last-child
+  margin-right: 0 !important
+
+.spacing.is-vertical
+  +responsive
+    @each $size in $margins
+      &-size-#{$size} > *
+        margin-bottom: #{$size}px
+
+.spacing.is-vertical > *:last-child
+  margin-bottom: 0 !important

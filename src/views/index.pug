@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  head
+    title guerrilla.css
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Sofia")
+    link(rel="stylesheet" href="css/index.css")
+
+    script.
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('[data-link]').forEach(function(el) {
+          el.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelectorAll('[data-page]').forEach(function(el) {
+              el.classList.remove('is-active');
+            });
+            document.getElementById(e.target.dataset.section).classList.add('is-active');
+          });
+        });
+      });
+
+  body
+    section.sidebar
+      a.sidebar-item.logo(data-link data-section="main") guerrilla.css
+      a.sidebar-item(data-link data-section="box") Box
+      a.sidebar-item(data-link data-section="centered_section") Centered Section
+      a.sidebar-item(data-link data-section="spacing") Spacing
+      a.sidebar-item(data-link data-section="text") Text
+
+    include _main
+    include _box
+    include _centered_section
+    include _spacing
+    include _text
