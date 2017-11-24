@@ -10,8 +10,12 @@ const DIST_DIR = 'dist'
 const CSS_DIR = 'dist/css'
 
 gulp.task('webserver', function() {
+  gulp.start('sass');
+  gulp.start('pug');
+
   gulp.watch(SASS_DIR, ['sass'])
   gulp.watch(PUG_DIR, ['pug'])
+
   gulp.src(DIST_DIR)
     .pipe(webserver({livereload: true}))
 })
