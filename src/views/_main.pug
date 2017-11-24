@@ -8,7 +8,7 @@ section.section#main.is-active(data-page)
       | The main goal of this project is to introduce a scalable approach to CSS. There are certain cases when approaches like BEM do not work or just do not bring enough satisfaction.
 
     p
-      | Imagine a case when your project has a big number of pages which are different enough and which don't follow the same design guide. You will certainly attempt to share some common blocks between these pages. <strong>There might be a chance that these blocks are almost the same but they have differences on different pages.</strong> This situation might be easily met when you are adding new pages to a website which already has some legacy stuff. The designer might want to extend old styles on new pages, this happens. As a good developer, you want to make all the pages use same blocks, but this does not happen that quick and that easy, life is tough.
+      | Imagine a case when your project has a big number of pages which are different enough and which don't follow the same design guide. You will certainly attempt to share some common blocks between these pages. <strong>There might be a chance that these blocks are almost the same but they have differences on different pages.</strong> This situation might be easily met when you are adding new pages to a website which already has some legacy stuff. The designer might want to extend old styles on new pages, this happens. As a good developer, you want to make all the pages use same blocks, but this does not happen that quick and that easy, "life is pain" (c) Arkadiy.
 
     p
       | Your website might be using 2-3-4 different UI themes at one time if there is a lot of pages and all they are implemented at different points in time. This hurts code reusability if you have to maintain 2-3-4 sets of UI components separately.
@@ -62,8 +62,9 @@ section.section#main.is-active(data-page)
         |   │   ├── _spacing.sass
         |   │   └── ...
         |   ├── themes/
-        |   │   ├── _first.sass
-        |   │   ├── _second.sass
+        |   │   ├── _dark.sass
+        |   │   ├── _fancy.sass
+        |   │   ├── _light.sass
         |   │   └── ...
         |   ├── first_page_index_file.sass    // the file bundles styles for the page
         |   ├── second_page_index_file.sass   // the file bundles styles for the page
